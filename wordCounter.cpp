@@ -27,9 +27,9 @@ int main()
         getline(cin, userInput);
 
         // Outputs data.
-        cout << "Number of Characters: " << userInput.length() << endl;
+        cout << endl << "Number of Characters: " << userInput.length() << endl;
         cout << "Number of Letters: " << countLetters(userInput) << endl;
-        cout << "Number of Words: " << countWords(userInput) << endl;
+        cout << "Number of Words: " << countWords(userInput) << endl << endl;
 
         // Asks to run again.
         cout << "Would you like to run again? (Y or N) ";
