@@ -63,7 +63,6 @@ int countWords(string userInput)
 
     // Loops based on size of user input.
     for (int i = 0; i < userInput.size(); i++)
-
         // Increments counter based on spaces and newline characters.
         if (userInput[i] == ' ' || userInput[i] == '\n')
             wordCounter++;
