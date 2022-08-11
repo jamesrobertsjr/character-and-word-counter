@@ -1,5 +1,5 @@
 //
-// This program calculates number of characters and words from user input.
+// wordCounter.cpp
 // Author: jameserv
 //
 
@@ -13,15 +13,11 @@ int countLetters(string);
 int countWords(string);
 char validateEntry(char);
 
-int main()
-{
-    // Variables.
+int main() {
     string userInput = "\0";
     char yesNo = '\0';
 
-    // Runs statements, then asks user if the would like to run again.
-    do
-    {
+    do {
         // Gets data.
         cout << "Enter a word or a phrase with single spaces between words: ";
         getline(cin, userInput);
@@ -42,45 +38,41 @@ int main()
     return 0;
 }
 
-// Counts letters in user entry, then returns the count.
-int countLetters(string userInput)
-{
+int countLetters(string userInput) {
     int letterCounter = 0;
 
-    // Loops based on size of user input.
-    for (int i = 0; i < userInput.size(); i++)
+    for (int i = 0; i < userInput.size(); i++) {
         // Increments counter based on ASCII values for letters.
-        if ((userInput[i] >= 65 && userInput[i] <= 90) || (userInput[i] >= 97 && userInput[i] <= 122))
+        if ((userInput[i] >= 65 && userInput[i] <= 90) || (userInput[i] >= 97 && userInput[i] <= 122)) {
             letterCounter++;
-   
+        }
+    }
+
     return letterCounter;
 }
 
-// Counts words in user entry, then returns the count.
-int countWords(string userInput)
-{
+int countWords(string userInput) {
     int wordCounter = 0;
 
-    // Loops based on size of user input.
-    for (int i = 0; i < userInput.size(); i++)
+    for (int i = 0; i < userInput.size(); i++) {
         // Increments counter based on spaces and newline characters.
-        if (userInput[i] == ' ' || userInput[i] == '\n')
+        if (userInput[i] == ' ' || userInput[i] == '\n') {
             wordCounter++;
+        }
+    }
 
     wordCounter += 1;
     return wordCounter;
 }
 
 // Validates user entry for re-running program.
-char validateEntry (char yesNo)
-{
+char validateEntry (char yesNo) {
     // Checks if the user submitted a proper entry. If not, it asks for a valid entry.
-    while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N')
-    {
+    while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
         cout << "ERROR. Invalid entry. Please try again." << endl;
         cin >> yesNo;
     }
     
-    // Returns the valid entry.
-    return toupper(yesNo);
+    char validEntry = toupper(yesNo);
+    return validEntry;
 }
