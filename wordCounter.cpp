@@ -67,7 +67,6 @@ int countWords(string userInput) {
 
 // Validates user entry for re-running program.
 char validateEntry (char yesNo) {
-    // Checks if the user submitted a proper entry. If not, it asks for a valid entry.
     while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
         cout << "ERROR. Invalid entry. Please try again." << endl;
         cin >> yesNo;
