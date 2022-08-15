@@ -34,3 +34,5 @@
 # Other
 .DS_Store
 .vscode
+wordCounter
+wordCounter.dSYM/Contents/Info.plist
