@@ -13,13 +13,13 @@ int countLetters(string);
 int countWords(string);
 char validateEntry(char);
 
-struct userInput {
+struct UserInput {
     string phrase;
     char yesNo;
 };
 
 int main() {
-    userInput user;
+    UserInput user;
     do {
         // Gets data.
         cout << "Enter a word or a phrase with single spaces between words: ";
