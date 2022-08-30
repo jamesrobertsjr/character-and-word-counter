@@ -35,7 +35,6 @@ int main() {
         cin >> user.yesNo;
 
         cin.ignore();
-
     } while (validateEntry(user.yesNo) == 'Y');
     
     return 0;
