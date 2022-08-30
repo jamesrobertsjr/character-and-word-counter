@@ -36,7 +36,6 @@ int main() {
 
         cin.ignore();
     } while (validateEntry(user.yesNo) == 'Y');
-    
     return 0;
 }
 
@@ -49,7 +48,6 @@ int countLetters(string phrase) {
             letterCounter++;
         }
     }
-
     return letterCounter;
 }
 
@@ -62,7 +60,6 @@ int countWords(string phrase) {
             wordCounter++;
         }
     }
-
     wordCounter += 1;
     return wordCounter;
 }
@@ -73,7 +70,6 @@ char validateEntry (char yesNo) {
         cout << "ERROR: Invalid entry. Please try again." << endl;
         cin >> yesNo;
     }
-    
     char validEntry = toupper(yesNo);
     return validEntry;
 }
