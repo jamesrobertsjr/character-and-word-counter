@@ -6,15 +6,14 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-using namespace std;
 
 // Function prototypes.
-int countLetters(string);
-int countWords(string);
+int countLetters(std::string);
+int countWords(std::string);
 char validateEntry(char);
 
 struct UserInput {
-    string phrase;
+    std::string phrase;
     char yesNo;
 };
 
@@ -22,24 +21,24 @@ int main() {
     UserInput user;
     do {
         // Gets data.
-        cout << "Enter a word or a phrase with single spaces between words: ";
-        getline(cin, user.phrase);
+        std::cout << "Enter a word or a phrase with single spaces between words: ";
+        std::getline(std::cin, user.phrase);
 
         // Outputs data.
-        cout << endl << "Number of Characters: " << user.phrase.length() << endl;
-        cout << "Number of Letters: " << countLetters(user.phrase) << endl;
-        cout << "Number of Words: " << countWords(user.phrase) << endl << endl;
+        std::cout << std::endl << "Number of Characters: " << user.phrase.length() << std::endl;
+        std::cout << "Number of Letters: " << countLetters(user.phrase) << std::endl;
+        std::cout << "Number of Words: " << countWords(user.phrase) << std::endl << std::endl;
 
         // Asks to run again.
-        cout << "Would you like to run again? (Y or N) ";
-        cin >> user.yesNo;
+        std::cout << "Would you like to run again? (Y or N) ";
+        std::cin >> user.yesNo;
 
-        cin.ignore();
+        std::cin.ignore();
     } while (validateEntry(user.yesNo) == 'Y');
     return 0;
 }
 
-int countLetters(string phrase) {
+int countLetters(std::string phrase) {
     int letterCounter = 0;
 
     for (int i = 0; i < phrase.size(); i++) {
@@ -51,7 +50,7 @@ int countLetters(string phrase) {
     return letterCounter;
 }
 
-int countWords(string phrase) {
+int countWords(std::string phrase) {
     int wordCounter = 0;
 
     for (int i = 0; i < phrase.size(); i++) {
@@ -67,8 +66,8 @@ int countWords(string phrase) {
 // Validates user entry for re-running program.
 char validateEntry (char yesNo) {
     while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
-        cout << "ERROR: Invalid entry. Please try again." << endl;
-        cin >> yesNo;
+        std::cout << "ERROR: Invalid entry. Please try again." << std::endl;
+        std::cin >> yesNo;
     }
     char validEntry = toupper(yesNo);
     return validEntry;
